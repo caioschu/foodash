@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Inter', sans-serif;
+  }
+
+  body {
+    @apply bg-gray-50 text-gray-900;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-medium text-gray-900;
+  }
+
+  h1 {
+    @apply text-3xl md:text-4xl;
+  }
+
+  h2 {
+    @apply text-2xl md:text-3xl;
+  }
+
+  h3 {
+    @apply text-xl md:text-2xl;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center px-6 py-3 border border-transparent rounded-xl shadow-sm text-base font-medium focus:outline-none focus:ring-2 focus:ring-offset-2 transition-all duration-200;
+  }
+
+  .btn-primary {
+    @apply bg-orange-500 text-white hover:bg-orange-600 focus:ring-orange-400 shadow-orange-100;
+  }
+
+  .btn-secondary {
+    @apply bg-white text-gray-700 border-gray-300 hover:bg-gray-50 focus:ring-orange-400;
+  }
+
+  .btn-accent {
+    @apply bg-blue-600 text-white hover:bg-blue-700 focus:ring-blue-400;
+  }
+
+  .card {
+    @apply bg-white rounded-xl shadow-sm p-6 transition-shadow duration-200 hover:shadow-md;
+  }
+
+  .input {
+    @apply block w-full px-4 py-3 rounded-xl border-2 border-gray-200 shadow-sm focus:border-orange-500 focus:ring focus:ring-orange-200 focus:ring-opacity-50 transition-colors duration-200 text-base;
+  }
+
+  .input-group {
+    @apply space-y-1.5;
+  }
+
+  .label {
+    @apply block text-sm font-medium text-gray-700;
+  }
+
+  .page-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6;
+  }
+
+  .page-title {
+    @apply text-2xl font-bold text-gray-900 mb-6;
+  }
+
+  .section-title {
+    @apply text-xl font-medium text-gray-900 mb-4;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.animate-slideUp {
+  animation: slideUp 0.4s ease-out;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
